@@ -178,14 +178,14 @@ workflows:
           requires:
             - lint-docker
       - create-cluster:
-          cluster-name: my-eks-demo
+          cluster-name: my-eks-demo1
           requires:
             - build-deploy-app
       - test-cluster:
-          cluster-name: my-eks-demo
+          cluster-name: my-eks-demo1
           requires:
             - create-cluster
-      - delete-cluster:
-          cluster-name: my-eks-demo
-          requires:
-            - test-cluster
+      #- delete-cluster:
+      #    cluster-name: my-eks-demo
+      #    requires:
+      #      - test-cluster
